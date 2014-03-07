@@ -23,7 +23,7 @@ class Life
     if plan_name == "Ragequit" || plan_name == "Quit" || plan_name == "Exit"
       exit = true
       abort("RAGEQUIT")
-    elsif plan = @unconfirmed.plans.select{|unconfirmed_plan| unconfirmed_plan.name == plan_name}[0] #if life.unconfirmed.plans.include?(plan)
+    elsif plan = @unconfirmed.plans.select{|plan| plan.name == plan_name}[0] #if life.unconfirmed.plans.include?(plan)
       @hours -= plan.cost
     #moves plan from unconfirmed to confirmed
       plan = @unconfirmed.remove(plan)
