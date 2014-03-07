@@ -24,8 +24,8 @@ class Life
     elsif plan = @unconfirmed.plans.select{|unconfirmed_plan| unconfirmed_plan.name == plan_name}[0] #if life.unconfirmed.plans.include?(plan)
       time.hours -= plan.cost
     #moves plan from unconfirmed to confirmed
-      plan = @unconfirmed.plans.delete(plan)
-      @confirmed.plans.push(plan)
+      plan = @unconfirmed.remove(plan)
+      @confirmed.add(plan)
     else
       puts "You've got to type the precise name of one of these plans, my dear."
   end
