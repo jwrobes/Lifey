@@ -1,6 +1,6 @@
 class Life
   
-  attr_accessor :hours, :unconfirmed, :confirmed
+  attr_accessor :hours, :unconfirmed, :confirmed, :name
 
   def initialize(name)
     @name = name
@@ -84,6 +84,29 @@ end
 
 ####DRIVER CODE#####
 
+
+jonathan = Life.new("Jonathan")
+
+puts "--------------------\n Life Class Set Up: "
+
+puts jonathan.name == "Jonathan"
+puts jonathan.hours == 6
+
+puts "--------------------\n Life Class Start Tests: "
+
+jonathan.start
+ 
+puts jonathan.unconfirmed.plans[0].name == "Sleep" #=> true
+puts jonathan.unconfirmed.plans[1].name == "Code" #=> true
+
+puts jonathan.confirmed.plans.length == 0 #=> true
+
+# puts jonathan.unconfirmed[1].name == "Code"
+
+
+###GAME CODE
+=begin
+
 puts "Hello there, what's your name?"
 name = gets.chomp
 puts "Hi #{name}. Welcome to DevBootCamp! I'm Lifey."
@@ -118,3 +141,6 @@ until exit
   puts "Oops! You ran out of time."
   puts "You won't make it through DevBootCamp alive with that level of life skill. Better try again."
 end
+
+=end
+######
